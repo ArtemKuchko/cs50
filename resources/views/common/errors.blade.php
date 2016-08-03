@@ -3,7 +3,7 @@
     <!--Form error list -->
     <div class="alert alert-danger">
 
-        <strong>Whoops! Something went wrong!</strong>
+        <strong>Something went wrong!</strong>
 
         <br><br>
 

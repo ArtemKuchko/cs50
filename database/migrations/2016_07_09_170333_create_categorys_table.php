@@ -5,10 +5,12 @@ use Illuminate\Database\Migrations\Migration;
 
 class CreateCategorysTable extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
+    /*
+     описание:
+    Таблица Весовые категории
+    - название категории (напрмер до 48кг, до 52кг, до 56 кг, свыше 90 кг и т.д.)
+    - минимальный допустимый вес (например, 52.100 кг)
+    - максимальный допустимый вес вес ( например, 56.00 кг)
      */
     public function up()
     {

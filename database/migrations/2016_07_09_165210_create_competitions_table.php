@@ -5,10 +5,15 @@ use Illuminate\Database\Migrations\Migration;
 
 class CreateCompetitionsTable extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
+    /*
+    Описание:
+    таблица Соревнования:
+    - начало соревнований,
+    - конец соревнований,
+    - уровень соревнований (городской, областной, национальный)
+    - дедлайн заявки,
+    - ссылка на id файла о положении проведения соревнований
+
      */
     public function up()
     {

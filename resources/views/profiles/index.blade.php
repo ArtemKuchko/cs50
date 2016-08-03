@@ -6,31 +6,38 @@
 
         @include('common.errors')
 
-        <div>
-            <h3>Заявка на участие в соревнованиях</h3>
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <div class="panel panel-default">
+                    <div class="panel-heading">Заполнените данные спортсмена:</div>
 
-        </div>
+                    <div class="panel-body">
+
 
         <form action="{{ url('profile') }}" method="POST" class="form-horizontal">
 
             {{ csrf_field() }}
 
-                    <!-- profile data  -->
-            <div class="form-group">
 
-                <label for="profile" class="col-sm-2 control-label">Заполните данные спортсмена:</label>
+            <!-- profile data  -->
+
+                <div class="form-group">
 
                 <div class="col-sm-6">
 
-                    <input type="text" name="name" id="profile-name" placeholder="Имя" class="form-control">
+                    <label>Фамилия: </label>
+                    <input type="text" name="surname" id="profile-surname" placeholder="Например, Иванов" class="form-control">
 
-                    <input type="text" name="surname" id="profile-surname" placeholder="Фамилия" class="form-control">
+                    <label>Имя: </label>
+                    <input type="text" name="name" id="profile-name" placeholder="Например, Иван" class="form-control">
 
-                    <input type="text" name="last_name" id="profile-last_name" placeholder="Отчество" class="form-control">
+                    <label>Отчество: </label>
+                    <input type="text" name="last_name" id="profile-last_name" placeholder="Например, Петрович" class="form-control">
 
-                    <input type="text" name="birth_date" id="profile-birth_date" placeholder="Дата рождения (гггг-мм-дд)" class="form-control">
+                    <label>Выберите дату рождения: </label>
+                    <input type="date" name="birth_date" id="profile-birth_date" placeholder="(гггг-мм-дд)" class="form-control">
 
-                    <label>Разряд спортсмена:</label><select name="sport_level" id="profile-sport_level">
+                    <label>Разряд спортсмена: </label><select name="sport_level" id="profile-sport_level" class="form-control">
 
                         <option>МС</option>
                         <option>МСМК</option>
@@ -41,22 +48,32 @@
                         <option>3</option>
 
                     </select>
-                    <!-- <input type="text" name="sport_level" id="profile-sport_level" placeholder="Sport Level" class="form-control"> -->
 
-                    <label>Пол спортсмена:</label><select type="text" name="sex" id="profile-sex">
+                    <label>Пол спортсмена: </label><select type="text" name="sex" id="profile-sex" class="form-control">
 
-                        <option>мужчина</option>
+                        <option>муж</option>
 
-                        <option>женщина</option>
+                        <option>жен</option>
 
                     </select>
-                    <!-- <input type="text" name="sex" id="profile-sex" placeholder="Gender" class="form-control"> -->
+
+                    <label>Весовая категория: </label><select type="text" name="weight_category" id="" class="form-control">
+
+                        <option>48</option>
+
+                        <option>52</option>
+
+                        <option>56</option>
+
+                    </select>
+
 
                 </div>
 
-            </div>
+                </div>
 
             <!-- Add Profile Button -->
+
             <div class="form-group">
 
                 <div class="col-sm-offset-3 col-sm-6">
@@ -68,9 +85,12 @@
             </div>
         </form>
 
+        </div>
     </div>
+</div>
+</div>
 
-    <!-- ����������� ����� ����������� -->
+    <!-- ОТОБРАЖЕНИЕ ТЕКУЩЕГО ЛИСТА СПОРТСМЕНОВ -->
 
     @if (count($profiles)>0)
 
@@ -79,18 +99,18 @@
                 Текущий лист спортсменов:
             </div>
             <div class="panel-body">
-                <table class="table table-striped task-table" border="1">
+                <table class="table table-striped task-table">
 
                     <!-- Table Headings -->
                     <thead>
 
                     <th>№</th>
 
-                    <th>Имя</th>
-
                     <th>Фамилия</th>
 
-                    <th>Очество</th>
+                    <th>Имя</th>
+
+                    <th>Отчество</th>
 
                     <th>Дата рождения</th>
 
@@ -98,8 +118,9 @@
 
                     <th>Пол</th>
 
-                    <th>Удалить</th>
+                    <th>Весовая категория</th>
 
+                    <th>Удалить</th>
 
 
                     </thead>
@@ -116,14 +137,14 @@
                                 <div><?php echo $i; ?></div>
                             </td>
 
-                            <!-- Profile Name -->
-                            <td class="table-text">
-                                <div>{{ $profile->name }}</div>
-                            </td>
-
                             <!-- Profile SurName -->
                             <td class="table-text">
                                 <div>{{ $profile->surname }}</div>
+                            </td>
+
+                            <!-- Profile Name -->
+                            <td class="table-text">
+                                <div>{{ $profile->name }}</div>
                             </td>
 
                             <!-- Profile Last Name -->
@@ -144,6 +165,11 @@
                             <!-- Profile Gender -->
                             <td class="table-text">
                                 <div>{{ $profile->sex }}</div>
+                            </td>
+
+                            <!-- Profile Weight Category -->
+                            <td class="table-text">
+                                <div> - </div>
                             </td>
 
 

@@ -5,10 +5,11 @@ use Illuminate\Database\Migrations\Migration;
 
 class CreateApplicationsTable extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
+    /*
+     описание:
+    Таблица Заявка:
+    - соревнование,
+    - команда
      */
     public function up()
     {

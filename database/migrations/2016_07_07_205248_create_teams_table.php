@@ -5,10 +5,10 @@ use Illuminate\Database\Migrations\Migration;
 
 class CreateTeamsTable extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
+    /*описание:
+    Таблица Команды:
+    - название,
+    - уровень команды (для городских, областных или национальных соревнований)
      */
     public function up()
     {

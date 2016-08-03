@@ -5,10 +5,11 @@ use Illuminate\Database\Migrations\Migration;
 
 class CreateListsTable extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
+    /*
+     описание:
+    таблица Группы
+    - ссылка на название группы из таблицы Весовые категории,
+    - ссылка на строки завки
      */
     public function up()
     {

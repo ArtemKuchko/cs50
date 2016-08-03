@@ -40,8 +40,8 @@
                 </button>
 
                 <!-- Branding Image -->
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    Заявка
+                <a class="navbar-brand" href="">
+                    Ушу-саньда
                 </a>
             </div>
 
@@ -51,7 +51,21 @@
 
                     <li><a href="{{ url('/home') }}">Главная</a></li>
                     <li><a href="{{ url('/news') }}">Новости</a></li>
-                    <li><a href="{{ url('/categories') }}">Категории</a></li>
+                    <li><a href="{{ url('/') }}">Категории</a></li>
+                    <!--<li>
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-default">Категории</button>
+                            <button type="button" data-toggle="dropdown" class="btn btn-default dropdown-toggle"><span class="caret"></span></button>
+                            <ul class="dropdown-menu">
+                                <li><a href="{{ url('/categories') }}">Мужчины</a></li>
+                                <li><a href="{{ url('/categories') }}">Женщины</a></li>
+                            </ul>
+                        </div>-->
+                    </li>
+
+                    <li><a href="{{ url('/weight_in') }}">Взвешивание</a></li>
+                    <li><a href="{{ url('/') }}">Жеребьевка</a></li>
+                    <li><a href="{{ url('/') }}">Турнирная таблица</a></li>
 
                 </ul>
 

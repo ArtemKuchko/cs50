@@ -5,10 +5,13 @@ use Illuminate\Database\Migrations\Migration;
 
 class CreateGroupsTable extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
+    /*
+     описание:
+    Таблица Группы
+    - пол,
+    - возраст,
+    - весовая категория,
+    - ссылка на соревнования
      */
     public function up()
     {

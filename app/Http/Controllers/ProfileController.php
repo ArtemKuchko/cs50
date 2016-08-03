@@ -49,7 +49,7 @@ class ProfileController extends Controller
 
             'sport_level' => 'required|max:4',
 
-            'sex' => 'required|max:6',
+            'sex' => 'required|max:4',
 
         ]);
 

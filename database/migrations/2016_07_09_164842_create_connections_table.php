@@ -5,10 +5,13 @@ use Illuminate\Database\Migrations\Migration;
 
 class CreateConnectionsTable extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
+    /*
+     описание:
+      Таблица Связывающая Таблица:
+     - profile id (спортсмена),
+     - id команды,
+     - возможность подачи заявок
+
      */
     public function up()
     {

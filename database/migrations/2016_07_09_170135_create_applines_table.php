@@ -5,10 +5,12 @@ use Illuminate\Database\Migrations\Migration;
 
 class CreateApplinesTable extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
+    /*
+     описание:
+    Таблица Строки Заявки:
+    - ссылка на profile спортсмена,
+    - ссылка на таблицу весовых категорий,
+    - ссылка на profile тренера
      */
     public function up()
     {

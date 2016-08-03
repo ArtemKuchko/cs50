@@ -1,17 +1,18 @@
 <?php
 
-//use App\Profile;
-
-//use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 Route::group(['middleware' => 'web'], function() {
+
 
 //-----------------------------------------------------------------------------
     // Authentication Routes...
 
+    //Route::get('admin', 'frozennode\src\Frozennode\Administrator\AdminController@dashboard');
+
     Route::get('/', function(){
 
-        return view('home');
+        return view('news');
 
     })->middleware('guest');
 
@@ -23,110 +24,56 @@ Route::group(['middleware' => 'web'], function() {
 
 //-------------------------------------------------------------------------------
 
-    Route::get('/home', function(){
-
-        return view('home');
-
-    });
-
     Route::get('/news', function(){
 
         return view('news');
 
     });
 
-    Route::get('/categories', function(){
+//-------------------------------------------------------------------------------
+   // Роуты интерфейса главного тренера:
 
-        return view('categories');
+    //Route::post('/competition', 'CompetitionController@store');
+
+
+    //страница добавления соревнований:
+    /*Route::get('/competition', function(){
+
+        return view('head_coach.competition');
+
+    });*/
+
+    //успешная запись соревнования:
+    Route::get('/success', function() {
+
+       return view ('head_coach.success');
+    });
+
+    //просмотр текущих соревнований:
+    Route::get('/current_competition', function(){
+
+        $competitions = DB::table('competitions')->get();
+
+        return view('head_coach.current_competition', ['competitions' => $competitions]);
 
     });
 
+    Route::get('competition', 'CompetitionController@index');
 
+    Route::get('competition/get/{filename}', [
+        'as' => 'getfile', 'uses' => 'CompetitionController@get']);
+
+    Route::post('competition/add', [
+       'as' => 'addfile', 'uses' => 'CompetitionController@add']);
+
+    Route::get('/download/getDownload/{file_id}', [
+        'as' => 'filedownload', 'uses' => 'CompetitionController@getDownload']);
 
 
 });
-/*
-    // ���� ��� ����� ���������� ������
-    Route::get('/profile', function() {
-        $profiles = Profile::orderBy('created_at', 'asc')->get();
-
-        return view('profiles', [
-            'profiles' => $profiles
-        ]);
-    });*/
-
-    // ���� ��� ����������� ������� ������
-    /*Route::get('/profile', function (Request $request) {
-        //
-    });*/
-
-
-    /*
-    // ���� ��� �������� ������
-    Route::delete('/profile/{profile}', function (Profile $profile) {
-       //
-        $profile->delete();
-        return redirect('/profile');
-
-
-    });
-
-
-    Route::post('/profile', function (Request $request) {
-
-       $validator = Validator::make($request->all(),[
-
-           'name' => 'required|max:255',
-       ]);
-
-
-        if ($validator ->fails()) {
-            return redirect('/')
-                ->withInput()
-                ->withErrors($validator);
-
-
-        }
-
-        $profile = new Profile;
-        $profile->name = $request->name;
-        $profile->surname = $request->surname;
-        $profile->last_name = $request->last_name;
-        $profile->birth_date = $request->birth_date;
-        $profile->sport_level = $request->sport_level;;
-        $profile->sex = $request->sex;
 
 
 
 
-        $profile->save();
-
-        return redirect('/profile');
-
-    });*/
 
 
-
-/*
-|--------------------------------------------------------------------------
-| Application Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register all of the routes for an application.
-| It's a breeze. Simply tell Laravel the URIs it should respond to
-| and give it the controller to call when that URI is requested.
-|
-*/
-
-/*Route::get('/', function () {
-    return view('welcome');
-});*/
-
-/*
-Route::get('/', 'PostController@index');
-
-Route::resource('lists', 'ListsController');
-*/
-
-
-//Route::get('/home', 'HomeController@index');

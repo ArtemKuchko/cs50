@@ -5,10 +5,12 @@ use Illuminate\Database\Migrations\Migration;
 
 class CreateWeighinsTable extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
+    /*
+     описание:
+    Таблица Взвешивание
+    - соревнование,
+    - profile спортсмена,
+    - реальный вес спортсмена на взвешивании.
      */
     public function up()
     {

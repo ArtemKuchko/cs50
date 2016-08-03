@@ -5,10 +5,14 @@ use Illuminate\Database\Migrations\Migration;
 
 class CreateProfilesTable extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
+    /* описание:
+    Таблица Профайлы:
+    - фамилия,
+    - имя,
+    - отчество,
+    - разряд,
+    - пол,
+    - роль (администратор, главный судья, тренер, спортсмен)
      */
     public function up()
     {
